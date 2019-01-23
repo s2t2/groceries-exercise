@@ -1,7 +1,14 @@
 # groceries.py
 
 products = [
-    {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
+    {
+        "id":1, 
+        "name": "Chocolate Sandwich Cookies", 
+        "department": "snacks", 
+        "aisle": "cookies cakes", 
+        "price": 3.50
+    },
+    
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
     {"id":3, "name": "Robust Golden Unsweetened Oolong Tea", "department": "beverages", "aisle": "tea", "price": 2.49},
     {"id":4, "name": "Smart Ones Classic Favorites Mini Rigatoni With Vodka Cream Sauce", "department": "frozen", "aisle": "frozen meals", "price": 6.99},
@@ -23,6 +30,18 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
-print(products)
+print(len(products))
 
-# TODO: write some Python code here to produce the desired output
+# print(products[0]["name"])
+
+def product_name(any_product):
+    return any_product["name"]
+
+products = sorted(products, key=product_name)
+
+for p in products:
+    print("The name is " + p["name"] + " and the price is " + str(p["price"]))
+
+#for p in products:
+#    print(p["department"])
+
